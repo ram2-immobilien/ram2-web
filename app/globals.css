@@ -1,0 +1,16 @@
+html, body {
+    padding: 0px;
+    margin: 0px;
+    color: #101010;
+    user-select: none;
+}
+
+p {
+    margin: 0px;
+    font-size: 16px;
+}
+
+.content {
+    display: flex;
+    padding: 50px 100px;
+}
