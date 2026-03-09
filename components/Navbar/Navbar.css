@@ -29,6 +29,7 @@
         align-items: center;
         color: #F0F0F0;
         font-weight: 600;
+        cursor: pointer;
 
         .navbar-language-toggle-icon {
             font-size: 15px;

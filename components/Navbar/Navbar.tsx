@@ -6,10 +6,9 @@ import { faLanguage } from "@fortawesome/free-solid-svg-icons";
 import { useTranslations, useLocale } from "next-intl";
 
 import { Link, usePathname, useRouter } from "@/i18n/navigation";
+import { routing } from "@/i18n/routing";
 
 import "./Navbar.css"
-
-
 
 export default function Navbar() {
     const router = useRouter();
@@ -18,29 +17,14 @@ export default function Navbar() {
     const t = useTranslations("layout.navbar");
     
     function switchLanguage() {
-        let newLocale: string = currentLocale;
-    
-        switch(currentLocale) {
-            case "en": {
-                newLocale = "de";
-                break;
-            }
-            case "de": {
-                newLocale = "es";
-                break;
-            }
-            default: {
-                newLocale = "en";
-                break;
-            }
-        }
-
-        router.replace(currentPage, { locale: newLocale })
+        const locales = routing.locales;
+        const nextLocale = locales[(locales.indexOf(currentLocale as typeof locales[number]) + 1) % locales.length];
+        router.replace(currentPage, { locale: nextLocale });
     }
 
     return (
         <div className="navbar">
-            <Link href="/">
+            <Link href="/" prefetch={false}>
                 <Image
                     src="/images/logo.png"
                     alt="Logo"
@@ -52,19 +36,22 @@ export default function Navbar() {
             <div className="navbar-items">
                 <Link
                     className={`navbar-item ${currentPage == "/properties" ? "current": ""}`} 
-                    href="/properties">
+                    href="/properties"
+                    prefetch={false}>
                     {t("properties")}
                 </Link>
 
                 <Link
                     className={`navbar-item ${currentPage == "/about_us" ? "current": ""}`} 
-                    href="/about_us">
+                    href="/about_us"
+                    prefetch={false}>
                     {t("about_us")}
                 </Link>
 
                 <Link
                     className={`navbar-item ${currentPage == "/contact" ? "current": ""}`} 
-                    href="/contact">
+                    href="/contact"
+                    prefetch={false}>
                     {t("contact")}
                 </Link>
             </div>
