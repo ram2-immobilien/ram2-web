@@ -22,4 +22,16 @@
             font-weight: 600;
         }
     }
+
+    .navbar-language-toggle {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        color: #F0F0F0;
+        font-weight: 600;
+
+        .navbar-language-toggle-icon {
+            font-size: 15px;
+        }
+    }
 }

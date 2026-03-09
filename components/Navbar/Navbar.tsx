@@ -4,6 +4,8 @@ import { usePathname } from "next/navigation";
 
 import Image from "next/image";
 import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLanguage } from "@fortawesome/free-solid-svg-icons";
 
 import "./Navbar.css"
 
@@ -38,6 +40,10 @@ export default function Navbar() {
                     href="/contact">
                     Contact
                 </Link>
+            </div>
+            <div className="navbar-language-toggle">
+                <p>ES</p>
+                <FontAwesomeIcon className="navbar-language-toggle-icon" icon={faLanguage}/>
             </div>
         </div>
     );
