@@ -10,7 +10,7 @@
 
     .navbar-items {
         display: flex;
-        gap: 20px;
+        gap: 50px;
 
         .navbar-item {
             font-size: 16px;

@@ -1,0 +1,22 @@
+{
+    "layout": {
+        "navbar": {
+            "properties": "Properties",
+            "about_us": "About us",
+            "contact": "Contact"
+        },
+        "footer": {}
+    },
+    "home": {
+        "header": "Home"
+    },
+    "properties": {
+        "header": "Properties"
+    },
+    "about_us": {
+        "header": "About us"
+    },
+    "contact": {
+        "header": "Contact"
+    }
+}
