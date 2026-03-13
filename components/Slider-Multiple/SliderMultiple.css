@@ -1,0 +1,25 @@
+.slider-container {
+  width: 300px;
+  padding: 20px;
+  border-radius: 10px;
+  background: #f5f5f5;
+  font-family: Arial;
+}
+
+.slider-values {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.slider-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.slider-inputs input[type="range"] {
+  width: 100%;
+  cursor: pointer;
+}
