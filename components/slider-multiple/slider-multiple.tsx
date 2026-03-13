@@ -14,7 +14,7 @@ function SliderMultiple() {
         min="0"
         max="500"
         value={min}
-        onChange={(e) => setMin(e.target.value)}
+        onChange={(e) => setMin(Number(e.target.value))}
       />
 
       <p>Máximo: {max}€</p>
@@ -23,7 +23,7 @@ function SliderMultiple() {
         min="0"
         max="500"
         value={max}
-        onChange={(e) => setMax(e.target.value)}
+        onChange={(e) => setMax(Number(e.target.value))}
       />
     </div>
   );
