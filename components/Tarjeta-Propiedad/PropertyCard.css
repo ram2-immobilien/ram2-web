@@ -1,0 +1,35 @@
+.property-card {
+  width: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+  font-family: Arial;
+}
+
+.property-card:hover {
+  transform: translateY(-5px);
+}
+
+.property-image img {
+  width: 100%;
+  height: auto;
+}
+
+.property-info {
+  padding: 15px;
+}
+
+.property-price {
+  color: #2e7d32;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.property-details {
+  display: flex;
+  justify-content: space-between;
+  color: #555;
+  font-size: 14px;
+}
