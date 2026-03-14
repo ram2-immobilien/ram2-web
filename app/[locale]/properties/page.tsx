@@ -1,9 +1,16 @@
-import { useTranslations } from "next-intl";
+import SliderIndividual from "@/components/SliderIndividual/SliderIndividual";
 
 export default function Page() {
-    const t = useTranslations("properties");
 
     return (
-        <p>{t("header")}</p>
+        <div style={{ padding: "20px" }}>
+
+            {/* slider de habitaciones */}
+            <SliderIndividual label="Habitaciones" min={0} max={10} />
+
+            {/* slider de baños */}
+            <SliderIndividual label="Baños" min={0} max={5} />
+
+        </div>
     );
 }
