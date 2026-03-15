@@ -23,7 +23,7 @@ const Pagination = ({ totalPages = 8, onPageChange }: PaginationProps) => {
     }
   };
 
-  // aqui calculo que numeros mostrar segun en que pagina estoy
+// aqui calculo que numeros mostrar segun en que pagina estoy
   const getVisiblePages = () => {
     const pages: (number | string)[] = [];
 
@@ -35,28 +35,35 @@ const Pagination = ({ totalPages = 8, onPageChange }: PaginationProps) => {
       return pages;
     }
 
-    // siempre muestro la primera pagina
-    pages.push(1);
-
-    // si la pagina actual esta lejos del principio pongo puntitos
-    if (currentPage > 3) {
+    // en la pagina 1 muestro siempre 1, 2, 3 ... 8
+    if (currentPage === 1) {
+      pages.push(1);
+      pages.push(2);
+      pages.push(3);
       pages.push("...");
+      pages.push(totalPages);
+      return pages;
     }
 
-    // muestro las paginas alrededor de la pagina actual
-    for (let i = currentPage - 1; i <= currentPage + 1; i++) {
-      if (i > 1 && i < totalPages) {
+    // muestro desde la 1 hasta la pagina actual + 1
+    for (let i = 1; i <= currentPage + 1; i++) {
+      if (i <= totalPages) {
         pages.push(i);
       }
     }
 
-    // si la pagina actual esta lejos del final pongo puntitos
-    if (currentPage < totalPages - 3) {
-      pages.push("...");
+    // si estamos en la pagina 5 o mas muestro todo lo que queda
+    if (currentPage >= 5) {
+      for (let i = currentPage + 2; i <= totalPages; i++) {
+        pages.push(i);
+      }
+    } else {
+      // si antes de la 5 ponemos puntitos y la ultima
+      if (currentPage + 1 < totalPages) {
+        pages.push("...");
+        pages.push(totalPages);
+      }
     }
-
-    // siempre muestro la ultima pagina
-    pages.push(totalPages);
 
     return pages;
   };
@@ -64,68 +71,70 @@ const Pagination = ({ totalPages = 8, onPageChange }: PaginationProps) => {
   const visiblePages = getVisiblePages();
 
   return (
-    <div className="paginacion">
+    <div className="paginacion-contenedor">
+      <div className="paginacion">
 
-      {/* boton para ir a la primera pagina */}
-      <button
-        onClick={() => handlePageChange(1)}
-        disabled={currentPage === 1}
-        className="paginacion-btn"
-      >
-        «
-      </button>
+        {/* boton para ir a la primera pagina */}
+        <button
+          onClick={() => handlePageChange(1)}
+          disabled={currentPage === 1}
+          className="paginacion-btn"
+        >
+          «
+        </button>
 
-      {/* boton pagina anterior */}
-      <button
-        onClick={() => handlePageChange(currentPage - 1)}
-        disabled={currentPage === 1}
-        className="paginacion-btn"
-      >
-        ‹
-      </button>
+        {/* boton pagina anterior */}
+        <button
+          onClick={() => handlePageChange(currentPage - 1)}
+          disabled={currentPage === 1}
+          className="paginacion-btn"
+        >
+          ‹
+        </button>
 
-      {/* aqui pinto los numeros */}
-      {visiblePages.map((page, i) => {
+        {/* aqui pinto los numeros */}
+        {visiblePages.map((page, i) => {
 
-        // si es los puntitos pongo el span
-        if (page === "...") {
+          // si es los puntitos pongo el span
+          if (page === "...") {
+            return (
+              <span key={i} className="paginacion-puntos">
+                …
+              </span>
+            );
+          }
+
+          // si no pongo el boton con el numero
           return (
-            <span key={i} className="paginacion-puntos">
-              …
-            </span>
+            <button
+              key={i}
+              onClick={() => handlePageChange(page as number)}
+              className={`paginacion-btn ${currentPage === page ? "paginacion-btn-activo" : ""}`}
+            >
+              {page}
+            </button>
           );
-        }
+        })}
 
-        // si no pongo el boton con el numero
-        return (
-          <button
-            key={i}
-            onClick={() => handlePageChange(page as number)}
-            className={`paginacion-btn ${currentPage === page ? "paginacion-btn-activo" : ""}`}
-          >
-            {page}
-          </button>
-        );
-      })}
+        {/* boton pagina siguiente */}
+        <button
+          onClick={() => handlePageChange(currentPage + 1)}
+          disabled={currentPage === totalPages}
+          className="paginacion-btn"
+        >
+          ›
+        </button>
 
-      {/* boton pagina siguiente */}
-      <button
-        onClick={() => handlePageChange(currentPage + 1)}
-        disabled={currentPage === totalPages}
-        className="paginacion-btn"
-      >
-        ›
-      </button>
+        {/* boton ultima pagina */}
+        <button
+          onClick={() => handlePageChange(totalPages)}
+          disabled={currentPage === totalPages}
+          className="paginacion-btn"
+        >
+          »
+        </button>
 
-      {/* boton ultima pagina */}
-      <button
-        onClick={() => handlePageChange(totalPages)}
-        disabled={currentPage === totalPages}
-        className="paginacion-btn"
-      >
-        »
-      </button>
-
+      </div>
     </div>
   );
 };

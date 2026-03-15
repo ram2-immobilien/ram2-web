@@ -1,3 +1,12 @@
+/* contenedor exterior para centrar la paginacion abajo */
+.paginacion-contenedor {
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 /* contenedor de todos los botones */
 .paginacion {
     display: flex;
