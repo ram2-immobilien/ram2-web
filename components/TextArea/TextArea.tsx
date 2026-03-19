@@ -2,43 +2,27 @@ import styles from "./TextArea.module.css";
 
 interface TextAreaProps {
   label: string;
-  placeholder?: string;
-  value?: string;
-  onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
-  disabled?: boolean;
+  placeholder: string;
+  value: string;
+  setValue: (value: string) => void;
   error?: string;
-  name?: string;
-  id?: string;
-  rows?: number;
 }
 
 export default function TextArea({
   label,
-  placeholder = "",
+  placeholder,
   value,
-  onChange,
-  disabled = false,
+  setValue,
   error,
-  name,
-  id,
-  rows = 5,
 }: TextAreaProps) {
-  const textareaId = id || name || label.toLowerCase().replace(/\s+/g, "-");
-
   return (
     <div className={styles.wrapper}>
-      <label htmlFor={textareaId} className={styles.label}>
-        {label}
-      </label>
+      <label className={styles.label}>{label}</label>
       <textarea
-        id={textareaId}
-        name={name}
         placeholder={placeholder}
         value={value}
-        onChange={onChange}
-        disabled={disabled}
-        rows={rows}
-        className={`${styles.textarea} ${error ? styles.textareaError : ""} ${disabled ? styles.textareaDisabled : ""}`}
+        onChange={(e) => setValue(e.target.value)}
+        className={`${styles.textarea} ${error ? styles.textareaError : ""}`}
       />
       {error && <span className={styles.errorMessage}>{error}</span>}
     </div>
