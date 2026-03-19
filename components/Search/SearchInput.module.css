@@ -1,0 +1,56 @@
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+/* LABEL */
+.label {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #222;
+}
+
+/* CAJA SELECT */
+.selectBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border: 1px solid #bdbdbd;
+  background-color: #ffffff;
+
+  padding: 6px 10px;
+  height: 38px; /* 👈 más bajo como en la imagen */
+  cursor: pointer;
+}
+
+/* CONTENIDO */
+.valuesWrapper {
+  display: flex;
+  gap: 6px;
+  overflow: hidden;
+}
+
+/* CHIPS */
+.tag {
+  font-family: 'Inter', sans-serif;
+  background-color: #3f5f87;
+  color: white;
+  font-size: 12px;
+  font-weight: 500;
+
+  padding: 3px 7px;
+  border-radius: 2px;
+
+  white-space: nowrap;
+}
+
+/* PLACEHOLDER */
+.placeholder {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: #888;
+}
