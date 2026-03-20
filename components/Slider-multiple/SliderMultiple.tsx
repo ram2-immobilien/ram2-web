@@ -1,16 +1,14 @@
-import { useState, useEffect } from "react";
 import "./SliderMultiple.css";
+import "./PrecioMaxMin.tsx";
+type Props = {
+  min: number;
+  max: number;
+  setMin: (value: number) => void;
+  setMax: (value: number) => void;
+};
+export default function SliderMultiple({ min, max, setMin, setMax }: Props) {
 
-export default function SliderMultiple() {
 
-  const [min, setMin] = useState(0);
-  const [max, setMax] = useState(2000000);
-
-useEffect(() => {
-  if (min > max) {
-    setMin(max);
-  }
-}, [min, max]);
   return (
     <div className="slider-wrapper">
 
