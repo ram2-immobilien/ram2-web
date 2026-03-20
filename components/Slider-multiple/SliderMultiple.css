@@ -90,7 +90,7 @@
 }
 
 .thumb::-moz-range-progress {
-  background: #2D5D8D;
+  background: transparent;
   height: 6px;
   border-radius: 5px;
 }
@@ -168,3 +168,7 @@
   top: 50%;
   transform: translateY(-50%);
   position: relative;}
+
+  .thumb::-webkit-slider-runnable-track {
+  background: transparent;
+  }
