@@ -1,13 +1,14 @@
 import "./SliderMultiple.css";
 import "./PrecioMaxMin.tsx";
+
 type Props = {
   min: number;
   max: number;
   setMin: (value: number) => void;
   setMax: (value: number) => void;
 };
-export default function SliderMultiple({ min, max, setMin, setMax }: Props) {
 
+export default function SliderMultiple({ min, max, setMin, setMax }: Props) {
 
   return (
     <div className="slider-wrapper">
@@ -24,9 +25,9 @@ export default function SliderMultiple({ min, max, setMin, setMax }: Props) {
           max="2000000"
           value={min}
           onChange={(e) => {
-  const value = Number(e.target.value);
-  if (value < max) setMin(value);
-}}
+          const value = Number(e.target.value);
+          if (value < max) setMin(value);
+          }}
           className="thumb thumb-left"
         />
 
@@ -36,9 +37,9 @@ export default function SliderMultiple({ min, max, setMin, setMax }: Props) {
           max="2000000"
           value={max}
           onChange={(e) => {
-  const value = Number(e.target.value);
-  if (value > min) setMax(value);
-}}
+          const value = Number(e.target.value);
+          if (value > min) setMax(value);
+           }}
           className="thumb thumb-right"
         />
 
