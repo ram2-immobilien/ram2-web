@@ -1,6 +1,5 @@
 .slider-wrapper {
   width: 628.33px;
-  max-width: 628.33px;
   height: 100%;
   margin: 20px;
   font-family: Arial, sans-serif;
@@ -18,7 +17,7 @@
 .slider-container {
   position: relative;
   width: 100%;
-  min-width: 0;  
+  min-width: 0;
 }
 
 /* Barra */
@@ -37,7 +36,7 @@
 }
 
 .slider-range {
-  background: #2D5D8D;
+  background: #2d5d8d;
 }
 
 /* Input range básico */
@@ -61,7 +60,7 @@
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background: #2D5D8D;
+  background: #2d5d8d;
 
   cursor: pointer;
   position: relative;
@@ -74,7 +73,7 @@
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background: #2D5D8D;
+  background: #2d5d8d;
 
   cursor: pointer;
   position: relative;
@@ -84,7 +83,6 @@
 
 /* Firefox track y progress reset */
 .thumb::-moz-range-track {
-
   height: 6px;
   border-radius: 5px;
 }
@@ -100,7 +98,7 @@
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background: #2D5D8D;
+  background: #2d5d8d;
 
   cursor: pointer;
   position: relative;
@@ -116,7 +114,7 @@
 }
 
 .thumb::-ms-fill-lower {
-  background: #2D5D8D;
+  background: #2d5d8d;
   border-radius: 5px;
 }
 
@@ -152,7 +150,7 @@
   height: 18px;
   border-radius: 50%;
 
-  background: #2D5D8D;
+  background: #2d5d8d;
   cursor: pointer;
 }
 
@@ -163,12 +161,13 @@
   height: 18px;
   border-radius: 50%;
 
-  background: #2D5D8D;
+  background: #2d5d8d;
   cursor: pointer;
   top: 50%;
   transform: translateY(-50%);
-  position: relative;}
+  position: relative;
+}
 
-  .thumb::-webkit-slider-runnable-track {
+.thumb::-webkit-slider-runnable-track {
   background: transparent;
-  }
+}

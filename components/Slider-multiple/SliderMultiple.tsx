@@ -1,45 +1,55 @@
 import "./SliderMultiple.css";
-import "./PrecioMaxMin.tsx";
 
 type Props = {
-  min: number;
-  max: number;
-  setMin: (value: number) => void;
-  setMax: (value: number) => void;
+  minValue: number;
+  maxValue: number;
+  setMinValue: (value: number) => void;
+  setMaxValue: (value: number) => void;
+
+  lowerLimit: number;
+  upperLimit: number;
 };
 
-export default function SliderMultiple({ min, max, setMin, setMax }: Props) {
-
+export default function SliderMultiple({
+  minValue,
+  maxValue,
+  setMinValue,
+  setMaxValue,
+  lowerLimit,
+  upperLimit,
+}: Props) {
   return (
     <div className="slider-wrapper">
-
       <p className="slider-title">
-        <strong>Coste:</strong> {min.toLocaleString()} - {max.toLocaleString()} €
+        <strong>Coste:</strong> {minValue.toLocaleString()} -{" "}
+        {maxValue.toLocaleString()} €
       </p>
 
       <div className="slider-container">
-
+        {/* MIN */}
         <input
           type="range"
-          min="0"
-          max="2000000"
-          value={min}
+          min={lowerLimit}
+          max={upperLimit}
+          step={1000}
+          value={minValue}
           onChange={(e) => {
-          const value = Number(e.target.value);
-          if (value < max) setMin(value);
+            const value = Number(e.target.value);
+            if (value < maxValue) setMinValue(value);
           }}
           className="thumb thumb-left"
         />
-
+        {/* MAX */}
         <input
           type="range"
-          min="0"
-          max="2000000"
-          value={max}
+          min={lowerLimit}
+          max={upperLimit}
+          step={1000}
+          value={maxValue}
           onChange={(e) => {
-          const value = Number(e.target.value);
-          if (value > min) setMax(value);
-           }}
+            const value = Number(e.target.value);
+            if (value > minValue) setMaxValue(value);
+          }}
           className="thumb thumb-right"
         />
 
@@ -47,13 +57,11 @@ export default function SliderMultiple({ min, max, setMin, setMax }: Props) {
         <div
           className="slider-range"
           style={{
-            left: `${(min / 2000000) * 100}%`,
-            right: `${100 - (max / 2000000) * 100}%`
+            left: `${((minValue - lowerLimit) / (upperLimit - lowerLimit)) * 100}%`,
+            right: `${100 - ((maxValue - lowerLimit) / (upperLimit - lowerLimit)) * 100}%`,
           }}
         />
-
       </div>
-
     </div>
   );
 }
