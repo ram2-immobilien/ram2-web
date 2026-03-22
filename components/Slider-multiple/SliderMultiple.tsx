@@ -8,6 +8,9 @@ type Props = {
 
   lowerLimit: number;
   upperLimit: number;
+
+  step: number;
+  unit?: string;
 };
 
 export default function SliderMultiple({
@@ -17,12 +20,14 @@ export default function SliderMultiple({
   setMaxValue,
   lowerLimit,
   upperLimit,
+  step,
+  unit,
 }: Props) {
   return (
     <div className="slider-wrapper">
       <p className="slider-title">
         <strong>Coste:</strong> {minValue.toLocaleString()} -{" "}
-        {maxValue.toLocaleString()} €
+        {maxValue.toLocaleString()} {unit ?? "€"}
       </p>
 
       <div className="slider-container">
@@ -31,7 +36,7 @@ export default function SliderMultiple({
           type="range"
           min={lowerLimit}
           max={upperLimit}
-          step={1000}
+          step={step}
           value={minValue}
           onChange={(e) => {
             const value = Number(e.target.value);
@@ -44,7 +49,7 @@ export default function SliderMultiple({
           type="range"
           min={lowerLimit}
           max={upperLimit}
-          step={1000}
+          step={step}
           value={maxValue}
           onChange={(e) => {
             const value = Number(e.target.value);
