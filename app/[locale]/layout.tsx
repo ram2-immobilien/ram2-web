@@ -6,10 +6,14 @@ import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { routing } from "@/i18n/routing";
+import { Inter } from "next/font/google";
  
 import Navbar from "@/components/Navbar/Navbar";
 
 import "./globals.css"
+
+// configuro la fuente Inter
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Ram² Immobilien"
@@ -34,7 +38,7 @@ export default async function RootLayout({ children, params }: Props) {
 
     return (
         <html lang={locale}>
-            <body>
+            <body className={inter.className}>
                 <NextIntlClientProvider locale={locale} messages={messages}>
                     <Navbar />
                     <div className="content">
