@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { Inter } from "next/font/google";
 import { ReactNode } from "react";
 
 import { Analytics } from "@vercel/analytics/next";
@@ -14,6 +15,10 @@ import "./globals.css"
 export const metadata: Metadata = {
   title: "Ram² Immobilien"
 };
+
+const inter = Inter({
+    subsets: ['latin']
+})
 
 type Props = {
     children: ReactNode,
@@ -33,7 +38,7 @@ export default async function RootLayout({ children, params }: Props) {
     }
 
     return (
-        <html lang={locale}>
+        <html className={inter.className} lang={locale}>
             <body>
                 <NextIntlClientProvider locale={locale} messages={messages}>
                     <Navbar />

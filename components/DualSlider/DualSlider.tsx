@@ -1,4 +1,4 @@
-import "./SliderMultiple.css";
+import "./DualSlider.css";
 
 type Props = {
   minValue: number;
@@ -13,7 +13,7 @@ type Props = {
   unit?: string;
 };
 
-export default function SliderMultiple({
+export default function DualSlider({
   minValue,
   maxValue,
   setMinValue,
@@ -26,7 +26,7 @@ export default function SliderMultiple({
   return (
     <div className="slider-wrapper">
       <p className="slider-title">
-        <strong>Coste:</strong> {minValue.toLocaleString()} -{" "}
+        <span>Coste:</span> {minValue.toLocaleString()} -{" "}
         {maxValue.toLocaleString()} {unit ?? "€"}
       </p>
 
