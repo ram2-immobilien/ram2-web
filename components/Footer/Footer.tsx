@@ -1,19 +1,24 @@
+"use client"
+
 import React from 'react';
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faInstagram, faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { faPhone, faEnvelope, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
 import "./Footer.css";
 
 const Footer = () => {
+  const t = useTranslations('layout.footer');
+
   return (
     <footer className="footer-container">
       <div className="footer-content">
         
         
         <div className="footer-column">
-          <h3>Redes sociales</h3>
+          <h3>{t('social_media')}</h3>
           <ul>
             <li><FontAwesomeIcon icon={faFacebook} /> <a href="https://facebook.com" target="_blank">Facebook</a></li>
             <li><FontAwesomeIcon icon={faInstagram} /> <a href="https://instagram.com" target="_blank">Instagram</a></li>
@@ -23,7 +28,7 @@ const Footer = () => {
 
         
         <div className="footer-column">
-          <h3>Contactanos</h3>
+          <h3>{t('contact_us')}</h3>
           <ul>
             <li><FontAwesomeIcon icon={faPhone} /> <a href="tel:+4369917121430">+43 699 17 12 14 30</a></li>
             <li><FontAwesomeIcon icon={faEnvelope} /> <a href="mailto:office@ram2immobilien.com">office@ram2immobilien.com</a></li>
@@ -45,21 +50,20 @@ const Footer = () => {
           />
           <div className="branding-text">
           <p className="footer-text">
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            {t('ceo_quote')}
           </p>
-          <p className="footer-ceo">- Antonio Ramirez Ramia, CEO</p>
+          <p className="footer-ceo">{t('ceo_name')}</p>
           </div>
         </div>
       </div>
 
-      
       <div className="footer-legal-bar">
         <div className="footer-legal-content">
-          <span>Ram² Immobilien © 2026</span>
+          <span>{t('copyright')}</span>
           <div className="legal-links">
-            <Link href="/terms">Terminos y condiciones</Link>
+            <Link href="/terms">{t('terms')}</Link>
             <span>|</span>
-            <Link href="/privacy">Politica de privacidad</Link>
+            <Link href="/privacy">{t('privacy')}</Link>
           </div>
         </div>
       </div>

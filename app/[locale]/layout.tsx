@@ -9,6 +9,7 @@ import { getMessages } from "next-intl/server";
 import { routing } from "@/i18n/routing";
  
 import Navbar from "@/components/Navbar/Navbar";
+import Footer from "@/components/Footer/Footer";
 
 import "./globals.css"
 
@@ -44,6 +45,7 @@ export default async function RootLayout({ children, params }: Props) {
                     <div className="content">
                         {children}
                     </div>
+                    <Footer />
                 </NextIntlClientProvider>
                 <Analytics />
                 <SpeedInsights />

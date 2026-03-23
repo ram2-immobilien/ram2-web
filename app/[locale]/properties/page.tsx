@@ -6,6 +6,8 @@ export default function Page() {
     const t = useTranslations("properties");
 
     return (
-        <p>{t("header")}</p>
+        <div>
+            {/* Contenido de la página de Propiedades */}
+        </div>
     );
 }

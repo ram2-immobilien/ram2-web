@@ -6,6 +6,8 @@ export default function Home() {
     const t = useTranslations("home")
 
     return (
-        <p>{t("header")}</p>
+        <div>
+            {/* Contenido de la página de inicio */}
+        </div>
     );
 }
