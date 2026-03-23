@@ -2,14 +2,14 @@
   display: flex;
   gap: 20px;
 
-  background-color: transparent; /* 👈 sin caja blanca */
+  background-color: transparent; 
   padding: 0;
   width: 100%;
   max-width: 1000px;
   margin: 0 auto;
 }
 
-/* cada input */
+
 .inputWrapper {
   flex: 1;
 }

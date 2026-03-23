@@ -47,19 +47,22 @@ export default function Navbar() {
                 <div className="menu-items">
                     <Link
                         className={currentPage == "/properties" ? "current": ""}
-                        href="/properties">
+                        href="/properties"
+                        onClick={(e) => e.preventDefault()}>
                         {t("properties")}
                     </Link>
 
                     <Link
                         className={currentPage == "/about_us" ? "current": ""}
-                        href="/about_us">
+                        href="/about_us"
+                        onClick={(e) => e.preventDefault()}>
                         {t("about_us")}
                     </Link>
 
                     <Link
                         className={currentPage == "/contact" ? "current": ""}
-                        href="/contact">
+                        href="/contact"
+                        onClick={(e) => e.preventDefault()}>
                         {t("contact")}
                     </Link>
                 </div>
@@ -76,22 +79,22 @@ export default function Navbar() {
                 <div className="sidebar-items">
                     <Link
                         className={currentPage == "/properties" ? "current": ""}
-                        href="/properties"
-                        onClick={toggleSidebar}>
+                        href="#"
+                        onClick={(e) => { e.preventDefault(); toggleSidebar(); }}>
                         {t("properties")}
                     </Link>
     
                     <Link
                         className={currentPage == "/about_us" ? "current": ""}
-                        href="/about_us"
-                        onClick={toggleSidebar}>
+                        href="#"
+                        onClick={(e) => { e.preventDefault(); toggleSidebar(); }}>
                         {t("about_us")}
                     </Link>
 
                     <Link
                         className={currentPage == "/contact" ? "current": ""}
-                        href="/contact"
-                        onClick={toggleSidebar}>
+                        href="#"
+                        onClick={(e) => { e.preventDefault(); toggleSidebar(); }}>
                         {t("contact")}
                     </Link>
                 </div>

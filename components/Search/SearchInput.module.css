@@ -5,7 +5,7 @@
   width: 100%;
 }
 
-/* LABEL */
+
 .label {
   font-family: 'Inter', sans-serif;
   font-size: 14px;
@@ -13,7 +13,7 @@
   color: #222;
 }
 
-/* CAJA SELECT */
+
 .selectBox {
   display: flex;
   align-items: center;
@@ -23,18 +23,18 @@
   background-color: #ffffff;
 
   padding: 6px 10px;
-  height: 38px; /* 👈 más bajo como en la imagen */
+  height: 38px; 
   cursor: pointer;
 }
 
-/* CONTENIDO */
+
 .valuesWrapper {
   display: flex;
   gap: 6px;
   overflow: hidden;
 }
 
-/* CHIPS */
+
 .tag {
   font-family: 'Inter', sans-serif;
   background-color: #3f5f87;
@@ -48,7 +48,7 @@
   white-space: nowrap;
 }
 
-/* PLACEHOLDER */
+
 .placeholder {
   font-family: 'Inter', sans-serif;
   font-size: 13px;

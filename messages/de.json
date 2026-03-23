@@ -8,7 +8,22 @@
         "footer": {}
     },
     "home": {
-        "header": "Startseite"
+        "header": "Startseite",
+        "filters": {
+            "property": "Eigenschaft",
+            "property_apartment": "Apartment",
+            "property_office": "Büro",
+            "property_1plus": "1+",
+            "country": "Land",
+            "country_spain": "Spanien",
+            "city": "Stadt",
+            "city_madrid": "Madrid",
+            "city_valencia": "Valencia",
+            "tags": "Etiketten",
+            "tag_garage": "Garage",
+            "tag_garden": "Garten",
+            "tag_1plus": "1+"
+        }
     },
     "properties": {
         "header": "Eigenschaften"

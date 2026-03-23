@@ -7,9 +7,12 @@ import { SearchBar } from "@/components/Search/SearchBar";
 import { AdvancedFilters } from "@/components/Search/AdvancedFilters";
 
 export default function Home() {
-    const t = useTranslations("home")
-
     return (
-        <p>{t("header")}</p>
+        <section style={{ width: "100%", maxWidth: 1200, margin: "0 auto", paddingTop: 24 }}>
+            <SearchBar />
+            <div style={{ marginTop: 35 }}>
+                <AdvancedFilters />
+            </div>
+        </section>
     );
 }
