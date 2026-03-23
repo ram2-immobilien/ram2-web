@@ -1,37 +1,152 @@
 .navbar {
+    width: 100vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu {
     width: 100%;
     height: 75px;
-    background-color: #2D5D8D;
-    box-sizing: border-box;
     padding: 0px 100px;
+    box-sizing: border-box;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #2D5D8D;
+    
+    .menu-sidebar-toggle {
+        height: 40px;
+        padding: 0px 10px;
+        background-color: transparent;
+        border: 0px;
+        font-size: 16px;
+        color: #F0F0F0;
+        cursor: pointer;
+        display: none;
+    }
 
-    .navbar-items {
+    .menu-items {
         display: flex;
         gap: 50px;
 
-        .navbar-item {
+        a {
             font-size: 16px;
             color: #F0F0F0;
             text-decoration: none;
         }
 
-        .navbar-item:hover, .navbar-item.current {
+        a.current, a:hover {
             font-weight: 600;
         }
     }
 
-    .navbar-language-toggle {
+    .menu-language-switcher {
+        height: 40px;
+        padding: 0px 10px;
+        background-color: transparent;
+        border: 0px;
         display: flex;
-        gap: 10px;
         align-items: center;
+        gap: 10px;
+        font-size: 16px;
         color: #F0F0F0;
+        cursor: pointer;
+    }
+    
+    .menu-language-switcher:hover {
         font-weight: 600;
+    }
+}
 
-        .navbar-language-toggle-icon {
-            font-size: 15px;
+.backdrop {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.25);
+    position: absolute;
+    display: none;
+}
+
+.backdrop.open {
+    left: 0px;
+}
+
+.backdrop.closed {
+    left: -100vw;
+}
+
+.sidebar {
+    width: 300px;
+    height: 100vh;
+    padding: 5px 20px;
+    background-color: #2D5D8D;
+    flex-direction: column;
+    position: absolute;
+    transition: left 0.25s;
+    display: none;
+
+    .sidebar-toggle {
+        width: 40px;
+        height: 40px;
+        padding: 0px 10px;
+        background-color: transparent;
+        border: 0px;
+        font-size: 16px;
+        color: #F0F0F0;
+        cursor: pointer;
+    }
+
+    .sidebar-items {
+        padding: 20px 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        a {
+            font-size: 16px;
+            color: #F0F0F0;
+            text-decoration: none;
         }
+
+        a.current, a:hover {
+            font-weight: 600;
+        }
+    }
+}
+
+.sidebar.open {
+    left: 0px;
+}
+
+.sidebar.closed {
+    left: -100vw;
+}
+
+@media screen and (max-width: 1000px) {
+    .menu {
+        padding: 0px 50px;
+
+        .menu-items {
+            gap: 20px;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .menu {
+        height: 50px;
+        padding: 0px 20px;
+        
+        .menu-sidebar-toggle {
+            display: block;
+        }
+        
+        .menu-logo, .menu-items {
+            display: none;
+        }
+    }
+
+    .backdrop, .sidebar {
+        display: flex;
     }
 }
