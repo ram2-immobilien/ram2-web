@@ -11,20 +11,23 @@
 .paginacion {
     display: flex;
     align-items: center;
-    gap: 4px;
-    padding: 16px;
+    gap: 10px;
 }
 
 /* estilo base de cada boton */
 .paginacion-btn {
-    width: 36px;
-    height: 36px;
+    width: 40px;
+    height: 40px;
     border: none;
-    border-radius: 4px;
+    border-radius: 0;
     cursor: pointer;
     background: transparent;
-    color: #3c76f5;
+    color: #2D5D8D;
     font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* cuando el boton esta desactivado */
@@ -40,17 +43,17 @@
 
 /* el boton de la pagina activa */
 .paginacion-btn-activo {
-    background: #3a6ea5;
-    color: white;
-    font-weight: 600;
+    background: #2D5D8D;
+    color: #FFFFFF;
 }
 
 /* los puntitos */
 .paginacion-puntos {
-    width: 36px;
-    height: 36px;
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #888;
+    color: #2D5D8D;
+    font-weight: 600;
 }

@@ -1,29 +1,30 @@
-"use client";
-import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faAnglesLeft,
+  faAngleLeft,
+  faAngleRight,
+  faAnglesRight,
+} from "@fortawesome/free-solid-svg-icons";
 import "./Pagination.css";
+
 
 interface PaginationProps {
   totalPages: number;
-  onPageChange?: (page: number) => void;
+  currentPage: number;
+  onPageChange: (page: number) => void;
 }
 
 // componente de paginacion
-const Pagination = ({ totalPages = 8, onPageChange }: PaginationProps) => {
-
-  // guardo en que pagina estoy
-  const [currentPage, setCurrentPage] = useState(1);
+const Pagination = ({ totalPages, currentPage, onPageChange }: PaginationProps) => {
 
   // funcion para cambiar de pagina
   const handlePageChange = (page: number) => {
     // que no se salga de los limites
     if (page < 1 || page > totalPages) return;
-    setCurrentPage(page);
-    if (onPageChange) {
-      onPageChange(page);
-    }
+    onPageChange(page);
   };
 
-// aqui calculo que numeros mostrar segun en que pagina estoy
+  // aqui calculo que numeros mostrar segun en que pagina estoy
   const getVisiblePages = () => {
     const pages: (number | string)[] = [];
 
@@ -35,35 +36,28 @@ const Pagination = ({ totalPages = 8, onPageChange }: PaginationProps) => {
       return pages;
     }
 
-    // en la pagina 1 muestro siempre 1, 2, 3 ... 8
-    if (currentPage === 1) {
-      pages.push(1);
-      pages.push(2);
-      pages.push(3);
+    // siempre muestro la primera
+    pages.push(1);
+
+    // si la pagina actual esta lejos del principio pongo puntitos
+    if (currentPage > 3) {
       pages.push("...");
-      pages.push(totalPages);
-      return pages;
     }
 
-    // muestro desde la 1 hasta la pagina actual + 1
-    for (let i = 1; i <= currentPage + 1; i++) {
-      if (i <= totalPages) {
+    // muestro la pagina anterior, la actual y la siguiente
+    for (let i = currentPage - 1; i <= currentPage + 1; i++) {
+      if (i > 1 && i < totalPages) {
         pages.push(i);
       }
     }
 
-    // si estamos en la pagina 5 o mas muestro todo lo que queda
-    if (currentPage >= 5) {
-      for (let i = currentPage + 2; i <= totalPages; i++) {
-        pages.push(i);
-      }
-    } else {
-      // si antes de la 5 ponemos puntitos y la ultima
-      if (currentPage + 1 < totalPages) {
-        pages.push("...");
-        pages.push(totalPages);
-      }
+    // si la pagina actual esta lejos del final pongo puntitos
+    if (currentPage < totalPages - 2) {
+      pages.push("...");
     }
+
+    // siempre muestro la ultima
+    pages.push(totalPages);
 
     return pages;
   };
@@ -80,7 +74,7 @@ const Pagination = ({ totalPages = 8, onPageChange }: PaginationProps) => {
           disabled={currentPage === 1}
           className="paginacion-btn"
         >
-          «
+          <FontAwesomeIcon icon={faAnglesLeft} />
         </button>
 
         {/* boton pagina anterior */}
@@ -89,7 +83,7 @@ const Pagination = ({ totalPages = 8, onPageChange }: PaginationProps) => {
           disabled={currentPage === 1}
           className="paginacion-btn"
         >
-          ‹
+          <FontAwesomeIcon icon={faAngleLeft} />
         </button>
 
         {/* aqui pinto los numeros */}
@@ -122,7 +116,7 @@ const Pagination = ({ totalPages = 8, onPageChange }: PaginationProps) => {
           disabled={currentPage === totalPages}
           className="paginacion-btn"
         >
-          ›
+          <FontAwesomeIcon icon={faAngleRight} />
         </button>
 
         {/* boton ultima pagina */}
@@ -131,7 +125,7 @@ const Pagination = ({ totalPages = 8, onPageChange }: PaginationProps) => {
           disabled={currentPage === totalPages}
           className="paginacion-btn"
         >
-          »
+          <FontAwesomeIcon icon={faAnglesRight} />
         </button>
 
       </div>
