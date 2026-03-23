@@ -6,6 +6,9 @@ html, body {
     color: #101010;
     user-select: none;
     font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 p {
@@ -16,4 +19,5 @@ p {
 .content {
     display: flex;
     padding: 50px 100px;
+    flex: 1;
 }
