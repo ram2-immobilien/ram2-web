@@ -5,9 +5,11 @@ import { useTranslations } from "next-intl";
 import { useState } from "react";
 
 export default function Home() {
-  const t = useTranslations("home");
-  
-  return (
-      <p>{t("header")}</p>
-  );
+    const t = useTranslations("home")
+
+    return (
+        <div>
+            {/* Contenido de la página de inicio */}
+        </div>
+    );
 }
