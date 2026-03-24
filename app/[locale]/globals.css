@@ -3,6 +3,10 @@ html, body {
     margin: 0px;
     color: #101010;
     user-select: none;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
 p {
@@ -13,4 +17,5 @@ p {
 .content {
     display: flex;
     padding: 50px 100px;
+    flex: 1;
 }
