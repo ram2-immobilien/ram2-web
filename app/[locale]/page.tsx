@@ -38,17 +38,7 @@ export default function Home() {
       <p>{t("header")}</p>
 
       {properties.map((property) => (
-        <PropertyCard
-          key={property.id}
-          title={property.title}
-          price={property.price}
-          description={property.description}
-          location={property.location}
-          size={property.size}
-          bedrooms={property.bedrooms}
-          bathrooms={property.bathrooms}
-          image={property.image}
-        />
+        <PropertyCard key={property.id} property={property} />
       ))}
     </div>
   );
