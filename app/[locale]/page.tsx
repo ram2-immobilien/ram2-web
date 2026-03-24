@@ -38,7 +38,7 @@ export default function Home() {
       <p>{t("header")}</p>
 
       {properties.map((property) => (
-        <PropertyCard key={property.id} property={property} />
+        <PropertyCard property={property} />
       ))}
     </div>
   );
