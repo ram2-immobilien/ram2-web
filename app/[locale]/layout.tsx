@@ -1,19 +1,16 @@
-import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ReactNode } from "react";
 
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
+import { getMessages } from "next-intl/server";
 import { routing } from "@/i18n/routing";
- 
+
 import Navbar from "@/components/Navbar/Navbar";
+import Footer from "@/components/Footer/Footer";
 
 import "./globals.css"
-
-export const metadata: Metadata = {
-  title: "Ram² Immobilien"
-};
 
 type Props = {
     children: ReactNode,
@@ -26,7 +23,7 @@ export function generateStaticParams() {
 
 export default async function RootLayout({ children, params }: Props) {
     const {locale} = await params;
-    const messages = (await import(`@/messages/${locale}.json`)).default
+    const messages = await getMessages()
     
     if (!hasLocale(routing.locales, locale)) {
         notFound();
@@ -40,6 +37,7 @@ export default async function RootLayout({ children, params }: Props) {
                     <div className="content">
                         {children}
                     </div>
+                    <Footer />
                 </NextIntlClientProvider>
                 <Analytics />
                 <SpeedInsights />

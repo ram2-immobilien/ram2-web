@@ -5,7 +5,15 @@
             "about_us": "Über uns",
             "contact": "Kontakt"
         },
-        "footer": {}
+        "footer": {
+            "social_media": "Soziale Medien",
+            "contact_us": "Kontaktieren Sie uns",
+            "copyright": "Ram² Immobilien © 2026",
+            "terms": "Allgemeine Geschäftsbedingungen",
+            "privacy": "Datenschutzrichtlinie",
+            "ceo_quote": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\"",
+            "ceo_name": "- Antonio Ramirez Ramia, CEO"
+        }
     },
     "home": {
         "header": "Startseite"

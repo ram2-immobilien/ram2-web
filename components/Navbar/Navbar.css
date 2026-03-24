@@ -119,7 +119,7 @@
 }
 
 .sidebar.closed {
-    left: -100vw;
+    left: calc(-100vw - 300px);
 }
 
 @media screen and (max-width: 1000px) {
