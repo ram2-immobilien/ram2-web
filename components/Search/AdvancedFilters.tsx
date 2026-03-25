@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { SearchInput } from "./SearchInput";
 
@@ -22,6 +23,16 @@ export const AdvancedFilters = () => {
     },
   ];
 
+  const [selectedValues, setSelectedValues] = useState<string[]>(
+    filters.map(() => "")
+  );
+
+  const handleChange = (index: number, value: string) => {
+    const newSelected = [...selectedValues];
+    newSelected[index] = value;
+    setSelectedValues(newSelected);
+  };
+
   return (
     <div
       style={{
@@ -31,7 +42,12 @@ export const AdvancedFilters = () => {
     >
       {filters.map((filter, index) => (
         <div key={index} style={{ marginBottom: "20px" }}>
-          <SearchInput label={filter.label} values={filter.values} />
+          <SearchInput
+            label={filter.label}
+            values={filter.values}
+            selectedValue={selectedValues[index]}
+            onChange={(value) => handleChange(index, value)}
+          />
         </div>
       ))}
     </div>
