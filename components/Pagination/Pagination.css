@@ -1,0 +1,59 @@
+/* contenedor exterior para centrar la paginacion abajo */
+.paginacion-contenedor {
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* contenedor de todos los botones */
+.paginacion {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* estilo base de cada boton */
+.paginacion-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    background: transparent;
+    color: #2D5D8D;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* cuando el boton esta desactivado */
+.paginacion-btn:disabled {
+    color: #ccc;
+    cursor: not-allowed;
+}
+
+/* cuando pasas el raton por encima */
+.paginacion-btn:hover:not(:disabled) {
+    background: #e8eef5;
+}
+
+/* el boton de la pagina activa */
+.paginacion-btn-activo {
+    background: #2D5D8D;
+    color: #FFFFFF;
+}
+
+/* los puntitos */
+.paginacion-puntos {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2D5D8D;
+    font-weight: 600;
+}

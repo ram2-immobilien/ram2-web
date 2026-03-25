@@ -1,9 +1,12 @@
 "use client";
-
+import { useState } from 'react';
 import { SearchBar } from "@/components/Search/SearchBar";
 import { AdvancedFilters } from "@/components/Search/AdvancedFilters";
 
 export default function Home() {
+  const [nombre, setNombre] = useState("");
+  const [mensaje, setMensaje] = useState("");
+
     return (
         <section style={{ width: "100%", maxWidth: 1200, margin: "0 auto", paddingTop: 24 }}>
             <SearchBar />

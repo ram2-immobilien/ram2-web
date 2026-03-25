@@ -5,10 +5,10 @@ html, body {
     margin: 0px;
     color: #101010;
     user-select: none;
-    font-family: 'Inter', sans-serif;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
 
 p {

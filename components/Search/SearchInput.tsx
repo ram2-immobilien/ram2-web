@@ -15,7 +15,7 @@ export const SearchInput = ({ label, values = [], selectedValue, onChange }: Pro
     <div className={styles.container}>
       <span className={styles.label}>{label}</span>
 
-      {/* Botón principal del selector */}
+      
       <div className={styles.selectBox} onClick={() => setIsOpen(!isOpen)}>
         <span className={selectedValue ? styles.selectedTag : styles.placeholder}>
           {selectedValue || "Seleccionar..."}
@@ -23,7 +23,7 @@ export const SearchInput = ({ label, values = [], selectedValue, onChange }: Pro
         <span className={styles.arrow}>{isOpen ? "▲" : "▼"}</span>
       </div>
 
-      {/* Lista desplegable */}
+      
       {isOpen && values.length > 0 && (
         <div className={styles.dropdown}>
           {values.map((value) => (
