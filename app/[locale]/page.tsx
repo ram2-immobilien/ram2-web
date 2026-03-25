@@ -5,7 +5,8 @@ import { useTranslations } from "next-intl";
 import { useState } from "react";
 
 export default function Home() {
-    const t = useTranslations("home")
+  const [nombre, setNombre] = useState("");
+  const [mensaje, setMensaje] = useState("");
 
     return (
         <div>
