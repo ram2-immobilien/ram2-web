@@ -34,11 +34,6 @@
   background-color: #18345c;
 }
 
-.primary-button:disabled {
-  background-color: #9bbcff;
-  cursor: not-allowed;
-}
-
 .primary-button .icon {
   display: flex;
   align-items: center;
@@ -46,9 +41,4 @@
   width: 20px;
   height: 20px;
   color: #ffffff;
-}
-
-.primary-button .icon svg {
-  width: 100%;
-  height: 100%;
 }
