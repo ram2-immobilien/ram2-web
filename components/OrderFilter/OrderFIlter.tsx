@@ -7,22 +7,22 @@ type OrderOption = {
 };
 
 type OrderFilterProps = {
-  totalResults: number;
   selectedOrder: string;
   setSelectedOrder: React.Dispatch<React.SetStateAction<string>>;
   orderOptions: OrderOption[];
+  label: string;
 };
 
 function OrderFilter({
-  totalResults,
   selectedOrder,
   setSelectedOrder,
   orderOptions,
+  label,
 }: OrderFilterProps) {
   return (
     <div className="order-filter">
       <label htmlFor="order-select" className="order-filter__label">
-        Ordenar por:
+        {label}
       </label>
 
       <select
@@ -37,8 +37,6 @@ function OrderFilter({
           </option>
         ))}
       </select>
-
-      <p className="order-filter__results">{totalResults} resultados</p>
     </div>
   );
 }
