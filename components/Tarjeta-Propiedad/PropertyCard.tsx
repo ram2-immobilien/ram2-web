@@ -1,5 +1,6 @@
 import Image from "next/image";
 import "./PropertyCard.css";
+import { MapPin, Bed, Bath, Car, Leaf, Move } from "lucide-react";
 
 type Property = {
   id: number;
@@ -35,14 +36,32 @@ export default function PropertyCard({ property }: Props) {
       <div className="property-info">
         <h2>{property.title}</h2>
 
-        <p className="description">ubicacion {property.description}</p>
-
-        <div className="property-details"> {property.location}</div>
+        <p className="description">{property.description}</p>
 
         <div className="property-details">
-          <span>{property.size} m²</span>
-          <span>{property.bedrooms} baños</span>
-          <span>{property.bathrooms} habitaciones</span>
+          <MapPin size={20} /> {property.location}
+        </div>
+
+        <div className="property-details">
+          <span>
+            <Move size={20} /> {property.size} m²
+          </span>
+          <span className="divider">|</span>
+          <span>
+            <Bed size={20} />
+            {property.bedrooms}{" "}
+          </span>
+          <span>
+            <Bath size={20} />
+            {property.bathrooms}{" "}
+          </span>
+          <span className="divider">|</span>
+          <span>
+            <Car size={20} />
+          </span>
+          <span>
+            <Leaf size={20} />
+          </span>
         </div>
       </div>
     </div>

@@ -1,15 +1,15 @@
 .property-card {
   display: flex;
   border: 1px solid #e0e0e0;
-  border-radius: 10px;
+  border-radius: 0;
   overflow: hidden;
+
   width: 100%;
-  height: 100%;
   max-width: 1270px;
-  max-height: 270px;
   margin: 20px auto;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
   background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s;
 }
 
@@ -19,11 +19,8 @@
 
 .property-image {
   position: relative;
-  flex: 1 1 40%;
-  height: 100%;
-  max-height: 270px;
-  width: 700px;
-
+  flex: 0 0 40%; /* 🔥 clave */
+  aspect-ratio: 16 / 9; /* 🔥 reemplaza height */
   overflow: hidden;
 }
 
@@ -47,12 +44,13 @@
 .property-image .status {
   position: absolute;
   top: 15px;
-  left: 0px;
+  left: 0;
   background: #2d5d8d;
   color: #fff;
   padding: 6px 12px;
-  border-radius: 4px;
-  font-size: 0.9rem;
+  padding-left: 30px;
+  border-radius: 0 4px 4px 0;
+  font-size: 16px;
   font-weight: bold;
   z-index: 2;
 }
@@ -63,7 +61,7 @@
   bottom: 20px;
   left: 15px;
   color: #fff;
-  font-size: 2rem;
+  font-size: 32px;
   font-weight: bold;
   z-index: 2;
 }
@@ -71,19 +69,17 @@
 .property-info {
   flex: 1 1 60%;
   padding: 20px;
-  margin-top: -45px;
   display: flex;
   flex-direction: column;
 }
 
 .property-info h2 {
-  font-size: 1.5rem;
+  font-size: 24px;
   margin-bottom: 10px;
   color: #2d5d8d;
 }
 
 .property-info p {
-  flex: 1;
   color: #000000;
   line-height: 1.5;
 }
@@ -92,8 +88,9 @@
   display: flex;
   gap: 15px;
   margin-top: 15px;
-  font-size: 0.9rem;
+  font-size: 16px;
   color: #909090;
+  align-items: center;
 }
 .property-image {
   position: relative;
@@ -103,5 +100,15 @@
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  text-overflow: ellipsis;
+  line-height: 1.5;
+  max-height: calc(1.5em * 3);
+}
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.separator {
+  color: #ccc;
 }
