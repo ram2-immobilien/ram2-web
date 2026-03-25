@@ -1,4 +1,3 @@
-import Head from "next/head";
 import { notFound } from "next/navigation";
 import { ReactNode } from "react";
 
@@ -7,11 +6,18 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { routing } from "@/i18n/routing";
+import { Inter } from "next/font/google";
  
 import Navbar from "@/components/Navbar/Navbar";
+import Footer from "@/components/Footer/Footer";
 
 import "./globals.css"
 
+const inter = Inter({ subsets: ["latin"] });
+
+export const metadata: Metadata = {
+  title: "Ram² Immobilien"
+};
 
 type Props = {
     children: ReactNode,
@@ -30,20 +36,15 @@ export default async function RootLayout({ children, params }: Props) {
         notFound();
     }
 
-    console.log(locale)
-    console.log(Object.values(messages))
-    
     return (
-        <html lang={locale}>
-            <Head>
-                <title>Ram² Immobilien"</title>
-            </Head>
-            <body>
+        <html lang={locale} className={inter.className}>
+            <body className={inter.className}>
                 <NextIntlClientProvider locale={locale} messages={messages}>
                     <Navbar />
                     <div className="content">
                         {children}
                     </div>
+                    <Footer />
                 </NextIntlClientProvider>
                 <Analytics />
                 <SpeedInsights />

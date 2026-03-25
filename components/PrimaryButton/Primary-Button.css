@@ -1,0 +1,44 @@
+.primary-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  width: 500px;
+  height: 40px;
+
+  padding-left: 50px;
+  padding-right: 50px;
+  gap: 10px;
+
+  background-color: #2c5aa0;
+  color: #ffffff;
+
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+
+  box-sizing: border-box;
+  transition: background-color 0.2s ease;
+}
+
+.primary-button:hover {
+  background-color: #1f4273;
+}
+
+.primary-button:active {
+  background-color: #18345c;
+}
+
+.primary-button .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  color: #ffffff;
+}
