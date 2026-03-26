@@ -17,6 +17,8 @@ export default function Home() {
       size: 103,
       bedrooms: 2,
       bathrooms: 2,
+      garage: 1,
+      garden: 0,
       image: "/images/casa.png",
     },
     {
@@ -29,6 +31,22 @@ export default function Home() {
       size: 80,
       bedrooms: 3,
       bathrooms: 1,
+      garage: 0,
+      garden: 1,
+      image: "/images/casa.png",
+    },
+    {
+      id: 3,
+      title: "Casa",
+      price: 9999999,
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ornare lectus quis neque egestas, sed sagittis turpis porttitor. Nunc massa dui, tempor in efficitur non, iaculis a sapien. Morbi elementum libero ac lectus elementum, vitae sagittis purus blandit. Duis in pharetra erat. Suspendisse dignissim sit amet risus ut mattis. Quisque congue vitae felis eu sagittis. Curabitur euismod quis quam in aliquet. Mauris vel ante aliquam tortor ultrices vehicula id eu nunc. Pellentesque nec odio dignissim, rutrum libero nec, ullamcorper enim. Duis eu vulputate sem, a placerat ante.",
+      location: "madrid",
+      size: 9999,
+      bedrooms: 0,
+      bathrooms: 0,
+      garage: 0,
+      garden: 0,
       image: "/images/casa.png",
     },
   ];
