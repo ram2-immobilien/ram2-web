@@ -1,52 +1,35 @@
 "use client";
-
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { SearchInput } from "./SearchInput";
 
+const ADVANCED_CONFIG = [
+  { id: "property", options: ["apartment", "office", "1plus"] },
+  { id: "country", options: ["spain"] },
+  { id: "city", options: ["madrid", "valencia"] },
+  { id: "tags", options: ["garage", "garden", "1plus"] },
+];
+
 export const AdvancedFilters = () => {
   const t = useTranslations("home.filters");
 
-  const filters = [
-    {
-      label: t("property"),
-      values: [t("property_apartment"), t("property_office"), t("property_1plus")],
-    },
-    { label: t("country"), values: [t("country_spain")] },
-    {
-      label: t("city"),
-      values: [t("city_madrid"), t("city_valencia")],
-    },
-    {
-      label: t("tags"),
-      values: [t("tag_garage"), t("tag_garden"), t("tag_1plus")],
-    },
-  ];
-
-  const [selectedValues, setSelectedValues] = useState<string[]>(
-    filters.map(() => "")
-  );
-
-  const handleChange = (index: number, value: string) => {
-    const newSelected = [...selectedValues];
-    newSelected[index] = value;
-    setSelectedValues(newSelected);
-  };
+  // Estado que maneja un objeto con arrays para cada categoría
+  const [state, setState] = useState<Record<string, string[]>>({
+    property: [],
+    country: [],
+    city: [],
+    tags: [],
+  });
 
   return (
-    <div
-      style={{
-        maxWidth: "600px",
-        margin: "40px auto",
-      }}
-    >
-      {filters.map((filter, index) => (
-        <div key={index} style={{ marginBottom: "20px" }}>
+    <div style={{ maxWidth: "600px", margin: "40px auto" }}>
+      {ADVANCED_CONFIG.map((filter) => (
+        <div key={filter.id} style={{ marginBottom: "20px" }}>
           <SearchInput
-            label={filter.label}
-            values={filter.values}
-            selectedValue={selectedValues[index]}
-            onChange={(value) => handleChange(index, value)}
+            label={t(filter.id)}
+            values={filter.options.map(opt => t(`${filter.id}_${opt}`))}
+            selectedValues={state[filter.id]}
+            onChange={(vals) => setState({ ...state, [filter.id]: vals })}
           />
         </div>
       ))}

@@ -28,9 +28,9 @@
             "city_madrid": "Madrid",
             "city_valencia": "Valencia",
             "tags": "Tags",
-            "tag_garage": "Garage",
-            "tag_garden": "Garden",
-            "tag_1plus": "1+"
+            "tags_garage": "Garage",
+            "tags_garden": "Garden",
+            "tags_1plus": "1+"
         }
     },
     "properties": {
