@@ -16,7 +16,22 @@
         }
     },
     "home": {
-        "header": "Home"
+        "header": "Home",
+        "filters": {
+            "property": "Property",
+            "property_apartment": "Apartment",
+            "property_office": "Office",
+            "property_1plus": "1+",
+            "country": "Country",
+            "country_spain": "Spain",
+            "city": "City",
+            "city_madrid": "Madrid",
+            "city_valencia": "Valencia",
+            "tags": "Tags",
+            "tags_garage": "Garage",
+            "tags_garden": "Garden",
+            "tags_1plus": "1+"
+        }
     },
     "properties": {
         "header": "Properties"

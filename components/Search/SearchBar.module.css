@@ -1,0 +1,15 @@
+.barContainer {
+  display: flex;
+  gap: 20px;
+
+  background-color: transparent; 
+  padding: 0;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+
+.inputWrapper {
+  flex: 1;
+}

@@ -1,16 +1,19 @@
 "use client";
-
-import DualSlider from "@/components/DualSlider/DualSlider";
-import { useTranslations } from "next-intl";
-import { useState } from "react";
+import { useState } from 'react';
+import { SearchBar } from "@/components/Search/SearchBar";
+import { AdvancedFilters } from "@/components/Search/AdvancedFilters";
 
 export default function Home() {
   const [nombre, setNombre] = useState("");
   const [mensaje, setMensaje] = useState("");
 
     return (
-        <div>
-            {/* Contenido de la página de inicio */}
-        </div>
+        <section style={{ width: "100%", maxWidth: 1200, margin: "0 auto", paddingTop: 24 }}>
+            <SearchBar />
+            <div style={{ marginTop: 35 }}>
+                <AdvancedFilters />
+            </div>
+        </section>
     );
 }
+
